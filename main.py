@@ -1,4 +1,4 @@
-input_str = input()
+input_str = input("从键盘输入一行字符: ")
 letter_count = 0  
 digit_count = 0  
 space_count = 0  
