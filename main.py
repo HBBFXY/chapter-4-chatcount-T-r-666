@@ -1,22 +1,20 @@
-
-input_str = input()
-# 初始化计数器
-letter_count = 0  
-digit_count = 0   
-space_count = 0   
-other_count = 0 
-for char in input_str:
-    if '\u4e00' <= char <= '\u9fff':
+s = input()
+letters = 0
+digits = 0
+spaces = 0
+others = 0
+for c in s:
+    if c.isalpha():
+        letters += 1
+    elif c.isdigit():
+        digits += 1
+    elif c == ' ':
+        spaces += 1
+    elif '\u4e00' <= c <= '\u9fa5':
         continue
-    if ('a' <= char <= 'z') or ('A' <= char <= 'Z'):
-        letter_count += 1
-    elif '0' <= char <= '9':
-        digit_count += 1
-    elif char == ' ':
-        space_count += 1
     else:
-        other_count += 1
-print("英文字符: {}".format(letter_count))
-print("数字: {}".format(digit_count))
-print("空格: {}".format(space_count))
-print("其他字符: {}".format(other_count))
+        others += 1
+print(f"英文字符: {letters}")
+print(f"数字: {digits}")
+print(f"空格: {spaces}")
+print(f"其他字符: {others}")
