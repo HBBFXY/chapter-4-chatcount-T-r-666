@@ -4,7 +4,7 @@ digits = 0
 spaces = 0
 others = 0
 for c in s:
-    if c.isalpha():
+    if c.isascii() and c.isalpha():
         letters += 1
     elif c.isdigit():
         digits += 1
